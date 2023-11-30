@@ -1,0 +1,108 @@
+:root{
+  --mainf: #873300;
+  --namef: #ad1400;
+  --body:#1d0a0a;
+}
+
+body{
+  background-color: var(--body);
+}
+nav {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: black;
+  color: white;
+  padding: 10px; 
+}
+.nav1{
+  display: flex;
+  justify-content: space-between;
+}
+.nav2 {
+    background-color: black;
+    width:50%;
+    color: white;
+    display: flex;
+    color: white;
+    padding: 3px;;
+    justify-content: space-around;
+}
+
+.logo{
+  width: 160px;
+  height: 90px;
+  
+}
+
+.nav-txt{
+    color: var(--namef);
+    text-align: center;
+    font-size: 30px;
+}
+
+.nav-link{
+  text-decoration: none;
+  align-self: center;
+  color: var(--mainf);
+  font:30px ;
+}
+#search{
+  margin-right: 100px;
+  width: 220px;
+}
+.header{
+  display:grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.hsnacks:hover{
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.snacks{
+  background-image: url(images/chicken-pops.jpg);
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: fill;
+  background-position: center top; 
+  text-align: center;
+  text-decoration: none;
+}
+
+.snacks:hover{
+  text-align: center;
+}
+
+.hdesserts:hover{
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.desserts{
+  background-image:url(images/desserts.jpg) ;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  text-decoration: none;
+}
+
+.hdrinks:hover{
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+.drinks{
+  background-image: url(images/drinks.jpg);
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: fill;
+  text-align: center;
+  text-decoration: none;
+}
