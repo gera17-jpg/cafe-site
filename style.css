@@ -59,8 +59,8 @@ nav {
 }
 
 .hsnacks:hover{
-  filter: blur(8px);
   -webkit-filter: blur(8px);
+  filter: blur(8px);
 }
 
 .snacks{
@@ -78,8 +78,8 @@ nav {
 }
 
 .hdesserts:hover{
-  filter: blur(8px);
   -webkit-filter: blur(8px);
+  filter: blur(8px);
 }
 
 .desserts{
@@ -94,8 +94,8 @@ nav {
 }
 
 .hdrinks:hover{
-  filter: blur(8px);
   -webkit-filter: blur(8px);
+  filter: blur(8px);
 }
 .drinks{
   background-image: url(images/drinks.jpg);
@@ -105,4 +105,44 @@ nav {
   background-size: fill;
   text-align: center;
   text-decoration: none;
+}
+
+.p1,.p3,.p4{
+  width: 200px;
+  height:200px;
+  border-radius: 50%;
+}
+
+.p2{
+  width: 100px;
+  height: 50%;
+  border-radius: 50%;
+}
+
+.pwrapper3,.pwrapper4{
+  margin:25px;
+}
+
+.pwrapper3-txt{
+  padding: 20px 5px;
+  background-color: var(--mainf);
+  border-radius: 50%;
+  text-align: center;
+}
+
+.promo{
+  display: flex;
+  width:100%;
+  height: 18%;
+  background-color: var(--namef);
+}
+.promo2{
+  display: inline-flex;
+}
+.pwrapper2{
+  width: 15%;
+}
+
+p,h1{
+  color: #ffffff;
 }

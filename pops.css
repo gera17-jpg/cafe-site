@@ -1,0 +1,23 @@
+.pops{
+    width: 400px;
+    height: 350px;
+    margin: 20px;
+}
+
+.main{
+    position: relative;
+    top: 115px;
+}
+
+.chicken{
+    display: inline-flex;
+}
+
+.btn-wrapper{
+    display: inline-flex;
+    gap: 10px;
+}
+
+.input{
+    width: 30px;
+}
