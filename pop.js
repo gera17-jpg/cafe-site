@@ -14,3 +14,8 @@ function addToCartMsg(){
     alert('Item added to cart successfully');
     //Update the cart page
 }
+
+const cartList=[];
+function addToCart(){
+    let 
+}

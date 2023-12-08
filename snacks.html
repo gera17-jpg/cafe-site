@@ -15,7 +15,7 @@
         <div class="nav2">
             <a class="nav-link" href="index.html">Home</a>
             <input id="search" type="text" placeholder="Search..">
-            <a class="nav-link" href="#">Cart</a>
+            <a class="nav-link" href="#"><img class="cart2" src="images/cart2.png"></a>
             <a class="nav-link" href="#">Sign In</a> 
         </div>
     </nav>
@@ -23,27 +23,103 @@
     <div class="wrapper">
         <section>
             <a href="chicken-pop.html"><img class="section-img" src="images/chicken-pops.jpg"></a>
-            <p>Chicken Pop</p>
+            <p>Chicken Pops</p>
             <p><span>&#8369;</span>150.00</p>
+           <div class="btn-wrapper">
+                <button onclick="decreaseQuantity('input1')">-</button>
+                <input id="input1" type="text" value="0">
+                <button onclick="increaseQuantity('input1')">+</button>
+                <button onclick="addToCartMsg('Chicken Pops', 'input1')"><img class="cart1" src="images/cart1.png">Add to Cart</button>
+            </div>
         </section>
         
         <section>
             <a href="#"><img class="section-img" src="images/nachos.jpg"></a>
-            <p>Chicken Pop</p>
-            <p><span>&#8369;</span>150.00</p>   
+            <p>Nachos</p>
+            <p><span>&#8369;</span>150.00</p>  
+             <div class="btn-wrapper">
+                <button onclick="decreaseQuantity('input2')">-</button>
+                <input id="input2" type="text" value="0">
+                <button onclick="increaseQuantity('input2')">+</button>
+                <button onclick="addToCartMsg('Nachos', 'input2')"><img class="cart1" src="images/cart1.png">Add to Cart</button>
+            </div>
         </section>
         
         <section>
             <a href="#"><img class="section-img" src="images/quesadilla.jpg"></a>
-            <p>quesadilla</p>
+            <p>Quesadilla</p>
             <p><span>&#8369;</span>150.00</p>
+             <div class="btn-wrapper">
+                <button onclick="decreaseQuantity('input3')">-</button>
+                <input id="input3" type="text" value="0">
+                <button onclick="increaseQuantity('input3')">+</button>
+                <button onclick="addToCartMsg('Quesadilla', 'input3')"><img class="cart1" src="images/cart1.png">Add to Cart</button>
+            </div>
         </section>
         
         <section>
             <a href="#"><img class="section-img" src="images/spring-roll.jpg"></a>
             <p>Spring Roll</p>
             <p><span>&#8369;</span>150.00</p>
+            <div class="btn-wrapper">
+                <button onclick="decreaseQuantity('input4')">-</button>
+                <input id="input4" type="text" value="0">
+                <button onclick="increaseQuantity('input4')">+</button>
+                <button onclick="addToCartMsg('Spring Roll', 'input4')"><img class="cart1" src="images/cart1.png">Add to Cart</button>
+            </div>
         </section>
     </div>
-   
+
+   <script>
+        const quantities = {};
+        const cart = []; // This will store items added to the cart
+
+        function increaseQuantity(inputId) {
+            if (!quantities[inputId]) {
+                quantities[inputId] = 0;
+            }
+            quantities[inputId]++;
+            document.getElementById(inputId).value = quantities[inputId];
+        }
+
+        function decreaseQuantity(inputId) {
+            if (!quantities[inputId]) {
+                quantities[inputId] = 0;
+            }
+            if (quantities[inputId] > 0) {
+                quantities[inputId]--;
+            }
+            document.getElementById(inputId).value = quantities[inputId];
+        }
+
+        function addToCartMsg(itemName, inputId) {
+            const quantity = quantities[inputId] || 0;
+            if (quantity > 0) {
+                const existingItem = cart.find(item => item.name === itemName);
+
+                if (existingItem) {
+                    existingItem.quantity += quantity;
+                } else {
+                    cart.push({ name: itemName, quantity: quantity });
+                }
+
+                alert(`${quantity} ${itemName}(s) added to cart successfully`);
+                updateCart(); // Call a function to update the cart display
+            } else {
+                alert('Please add at least one item to the cart.');
+            }
+        }
+
+        function updateCart() {
+            const cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = ''; // Clear the existing cart list
+
+            cart.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - Quantity: ${item.quantity}`;
+                cartContainer.appendChild(listItem);
+            });
+        }
+
+   </script>
 </body>
